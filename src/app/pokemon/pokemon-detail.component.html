@@ -1,0 +1,37 @@
+<ActionBar [title]="'Details of ' + name"></ActionBar>
+
+<GridLayout *ngIf="pokemon" rows="auto, auto, *" columns="*, *" class="p-10">
+  <Label class="h2" text="Sprites" row="0" colSpan="*"></Label>
+  <Image [src]="pokemon.sprites.front_default" row="1" col="0"></Image>
+  <Image [src]="pokemon.sprites.back_default" row="1" col="1"></Image>
+  <GridLayout
+    row="2"
+    col="0"
+    colSpan="2"
+    rows="auto, auto, auto"
+    columns="auto, *"
+  >
+    <Label class="h2" text="Stats" row="0" colSpan="2"></Label>
+    <Label
+      class="font-weight-bold"
+      text="Pokemon Name "
+      row="1"
+      col="0"
+    ></Label>
+    <Label [text]="pokemon.name" row="1" col="1"></Label>
+    <Label
+      class="font-weight-bold"
+      text="Pokemon Types "
+      row="2"
+      col="0"
+    ></Label>
+    <Label
+      [text]="
+        pokemon.types[0].type.name +
+        (pokemon.types[1] ? '/' + pokemon.types[1].type.name : '')
+      "
+      row="2"
+      col="2"
+    ></Label>
+  </GridLayout>
+</GridLayout>

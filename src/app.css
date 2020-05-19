@@ -1,0 +1,10 @@
+@import "~@nativescript/theme/css/core.css";
+@import "~@nativescript/theme/css/aqua.css";
+
+Button.-primary {
+  font-size: 18;
+}
+
+Label {
+  font-size: 16;
+}
